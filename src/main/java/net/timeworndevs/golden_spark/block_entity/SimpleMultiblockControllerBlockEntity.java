@@ -18,21 +18,32 @@ import net.minecraft.text.TextContent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
+import net.timeworndevs.golden_spark.AbstractMultiblockController;
 import net.timeworndevs.golden_spark.IMultiblockController;
 import net.timeworndevs.golden_spark.init.GSBlockEntityTypes;
 
+import java.util.List;
 import java.util.Objects;
 
 import static net.minecraft.block.Blocks.*;
 
-public class SimpleMultiblockControllerBlockEntity extends BlockEntity implements IMultiblockController {
-    public static final BlockPattern PATTERN = BlockPatternBuilder.start()
-            .aisle(" D ", "DGD", " D ")
-            .aisle("   ", " @ ", "   ")
-            .where('D', pos -> pos.getBlockState() == GLASS.getDefaultState())
-            .where('G', pos -> pos.getBlockState() == GOLD_BLOCK.getDefaultState())
-            .where('@', pos -> (Object)pos.getBlockEntity() instanceof BlockEntity entity && pos.getBlockPos().equals(entity.getPos()))
-            .build();
+public class SimpleMultiblockControllerBlockEntity extends AbstractMultiblockController<Void> {
+    public static final List<PatternInfo<Void>> PATTERNS = List.of(
+            new PatternInfo<>(
+                    BlockPatternBuilder.start()
+                        .aisle(" D ", "DGD", " D ")
+                        .aisle("   ", " @ ", "   ")
+                        .where('D', pos -> pos.getBlockState() == GLASS.getDefaultState())
+                        .where('G', pos -> pos.getBlockState() == GOLD_BLOCK.getDefaultState())
+                        .where('@', pos -> (Object)pos.getBlockEntity() instanceof BlockEntity entity && pos.getBlockPos().equals(entity.getPos()))
+                        .build(),
+                    new Vec3i(-1, 0, -1),
+                    null
+            )
+    );
+
+
     boolean assembled = false;
 
     public SimpleMultiblockControllerBlockEntity(BlockPos pos, BlockState state) {
@@ -40,38 +51,7 @@ public class SimpleMultiblockControllerBlockEntity extends BlockEntity implement
     }
 
     @Override
-    public ActionResult tryAssemble(ItemUsageContext context) {
-        if (assembled) {
-            disassemble();
-            return ActionResult.SUCCESS;
-        }
-        final var result = PATTERN.searchAround(world, pos);
-        if (result == null) {
-            if (context.getPlayer() instanceof ServerPlayerEntity server) server.sendMessage(MutableText.of(new LiteralTextContent("Invalid multiblock")).formatted(Formatting.RED), true);
-            return ActionResult.FAIL;
-        };
-        final var entityPos = result.getFrontTopLeft().add(-1, 0, -1);
-        assert world != null && world.getBlockEntity(entityPos) == this;
-        assembled = true;
-        markDirty();
-        return ActionResult.SUCCESS;
-    }
-
-    @Override
-    public void readNbt(NbtCompound nbt) {
-        assembled = nbt.getBoolean("Assembled");
-        super.readNbt(nbt);
-    }
-
-    @Override
-    protected void writeNbt(NbtCompound nbt) {
-        nbt.putBoolean("Assembled", assembled);
-        super.writeNbt(nbt);
-    }
-
-    private void disassemble() {
-        assembled = false;
-        markDirty();
-        // more will be added as needed
+    protected List<PatternInfo<Void>> getPatternInfo() {
+        return PATTERNS;
     }
 }
