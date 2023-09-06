@@ -1,6 +1,7 @@
 package net.timeworndevs.golden_spark.block;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.item.BlockItem;
@@ -9,7 +10,7 @@ import net.timeworndevs.golden_spark.block_entity.SimpleMultiblockControllerBloc
 import org.jetbrains.annotations.Nullable;
 
 public class SimpleMultiblockControllerBlock extends BlockWithEntity {
-    public static final Block INSTANCE = new SimpleMultiblockControllerBlock(Settings.create().mapColor(MapColor.BRIGHT_TEAL));
+    public static final Block INSTANCE = new SimpleMultiblockControllerBlock(FabricBlockSettings.create());
     public static final BlockItem ITEM = new BlockItem(INSTANCE, new FabricItemSettings());
 
     private SimpleMultiblockControllerBlock(Settings settings) {

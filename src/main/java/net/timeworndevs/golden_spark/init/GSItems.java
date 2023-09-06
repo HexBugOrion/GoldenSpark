@@ -1,7 +1,6 @@
 package net.timeworndevs.golden_spark.init;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUsageContext;
@@ -19,7 +18,7 @@ public class GSItems {
     public static final Item SPIREMETAL_INGOT = new Item(new Item.Settings());
     public static final Item TONITRIUM_INGOT = new Item(new Item.Settings());
     public static final Item SPIREMETAL_SCRAPS = new Item(new Item.Settings());
-    public static final Item WRENCH = new Item(new FabricItemSettings().maxCount(1)) {
+    public static final Item COGSPANNER = new Item(new FabricItemSettings().maxCount(1)) {
         @Override
         public ActionResult useOnBlock(ItemUsageContext context) {
             final var entity = context.getWorld().getBlockEntity(context.getBlockPos());
@@ -47,7 +46,7 @@ public class GSItems {
     public static final BlockItem BOYKISSER = new BlockItem(GSBlocks.BOYKISSER, new Item.Settings());
 
     public static void init() {
-        Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "wrench"), WRENCH);
+        Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "cogspanner"), COGSPANNER);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "butter_spark"), GS_ICON);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "spiremetal_scraps"), SPIREMETAL_SCRAPS);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "spiremetal_ingot"), SPIREMETAL_INGOT);
@@ -62,7 +61,7 @@ public class GSItems {
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "temp_io"), TEMP_IO);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "temp_power_io"), TEMP_POWER_IO);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "endless_source"), ENDLESS_SOURCE);
-        Registry.register(Registries.ITEM, Registries.BLOCK.getId(SimpleMultiblockControllerBlock.INSTANCE), SimpleMultiblockControllerBlock.ITEM);
+        Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "simple_multiblock_controller"), SimpleMultiblockControllerBlock.ITEM);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "boykisser"), BOYKISSER);
     }
 }

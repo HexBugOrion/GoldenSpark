@@ -19,6 +19,9 @@
 
   "environment": "*",
   "entrypoints": {
+    "fabric-datagen": [
+      "net.timeworndevs.golden_spark.GSDatagen"
+    ],
     "main": [
       "net.timeworndevs.golden_spark.GSMain"
     ]
