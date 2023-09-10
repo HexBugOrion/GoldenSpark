@@ -1,5 +1,6 @@
 package net.timeworndevs.golden_spark.init;
 
+import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
@@ -36,11 +37,11 @@ public class GSItems {
 
         @Override
         public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
-            final var map = super.getAttributeModifiers(slot);
+            var mapBuilder = ImmutableMultimap.<EntityAttribute, EntityAttributeModifier>builder();
             if (slot == EquipmentSlot.MAINHAND) {
-                map.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Cogspanner attack damage increase", 1.5, EntityAttributeModifier.Operation.ADDITION));
+                mapBuilder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Cogspanner attack damage increase", 1.5, EntityAttributeModifier.Operation.ADDITION));
             }
-            return map;
+            return mapBuilder.build();
         }
     };
 
