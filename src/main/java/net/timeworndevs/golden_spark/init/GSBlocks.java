@@ -10,6 +10,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.timeworndevs.golden_spark.GSMain;
 import net.timeworndevs.golden_spark.block.EndlessSourceBlock;
+import net.timeworndevs.golden_spark.block.SimpleMultiblockControllerBlock;
 
 public class GSBlocks {
 
@@ -40,6 +41,7 @@ public class GSBlocks {
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "temp_io"), TEMP_IO);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "temp_power_io"), TEMP_POWER_IO);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "endless_source"), ENDLESS_SOURCE);
+        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "simple_multiblock_controller"), SimpleMultiblockControllerBlock.INSTANCE);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "boykisser"), BOYKISSER);
 
         clientBlockRendering();

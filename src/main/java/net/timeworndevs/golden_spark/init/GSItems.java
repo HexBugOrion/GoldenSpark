@@ -1,12 +1,22 @@
 package net.timeworndevs.golden_spark.init;
 
-import net.minecraft.block.Blocks;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemUsageContext;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.timeworndevs.golden_spark.GSMain;
+import net.timeworndevs.golden_spark.IMultiblockController;
+import net.timeworndevs.golden_spark.block.SimpleMultiblockControllerBlock;
 
 public class GSItems {
 
@@ -14,6 +24,26 @@ public class GSItems {
     public static final Item SPIREMETAL_INGOT = new Item(new Item.Settings());
     public static final Item TONITRIUM_INGOT = new Item(new Item.Settings());
     public static final Item SPIREMETAL_SCRAPS = new Item(new Item.Settings());
+    public static final Item COGSPANNER = new Item(new FabricItemSettings().maxCount(1)) {
+        @Override
+        public ActionResult useOnBlock(ItemUsageContext context) {
+            final var entity = context.getWorld().getBlockEntity(context.getBlockPos());
+            if (entity instanceof IMultiblockController controller) {
+                return controller.tryAssemble(context);
+            } else {
+                return ActionResult.FAIL;
+            }
+        }
+
+        @Override
+        public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
+            var mapBuilder = ImmutableMultimap.<EntityAttribute, EntityAttributeModifier>builder();
+            if (slot == EquipmentSlot.MAINHAND) {
+                mapBuilder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Cogspanner attack damage increase", 1.5, EntityAttributeModifier.Operation.ADDITION));
+            }
+            return mapBuilder.build();
+        }
+    };
 
     public static final BlockItem SPIREMETAL_BLOCK = new BlockItem(GSBlocks.SPIREMETAL_BLOCK, new Item.Settings());
     public static final BlockItem SCRAP_SPIREMETAL = new BlockItem(GSBlocks.SCRAP_SPIREMETAL, new Item.Settings());
@@ -31,6 +61,7 @@ public class GSItems {
     public static final BlockItem BOYKISSER = new BlockItem(GSBlocks.BOYKISSER, new Item.Settings());
 
     public static void init() {
+        Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "cogspanner"), COGSPANNER);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "butter_spark"), GS_ICON);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "spiremetal_scraps"), SPIREMETAL_SCRAPS);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "spiremetal_ingot"), SPIREMETAL_INGOT);
@@ -45,6 +76,7 @@ public class GSItems {
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "temp_io"), TEMP_IO);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "temp_power_io"), TEMP_POWER_IO);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "endless_source"), ENDLESS_SOURCE);
+        Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "simple_multiblock_controller"), SimpleMultiblockControllerBlock.ITEM);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "boykisser"), BOYKISSER);
     }
 }
