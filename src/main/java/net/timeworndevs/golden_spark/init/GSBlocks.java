@@ -14,14 +14,14 @@ import net.timeworndevs.golden_spark.block.EndlessSourceBlock;
 public class GSBlocks {
 
     //Resource blocks
-    public static final Block SCRAP_SPIREMETAL = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
-    public static final Block SPIREMETAL_BLOCK = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
+    public static final Block SCRAP_SPIRESTEEL = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
+    public static final Block SPIRESTEEL_BLOCK = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
     public static final Block TONITRIUM_BLOCK = new Block(FabricBlockSettings.of().mapColor(MapColor.DARK_AQUA).sounds(BlockSoundGroup.NETHERITE).requiresTool().strength(5.0F, 6.0F));
     public static final GlassBlock STORMGLASS = new GlassBlock(FabricBlockSettings.of().mapColor(MapColor.CYAN).sounds(BlockSoundGroup.GLASS).requiresTool().strength(0.3f).nonOpaque());
 
     //Machine component blocks
     public static final PillarBlock MAGNET_COIL = new PillarBlock(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.NETHERITE).requiresTool().strength(5.0F, 6.0F));
-    public static final Block SPIREMETAL_PLATING = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
+    public static final Block SPIRESTEEL_PLATING = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
     public static final Block TONITRIUM_PLATING = new Block(FabricBlockSettings.of().mapColor(MapColor.DARK_AQUA).sounds(BlockSoundGroup.NETHERITE).requiresTool().strength(5.0F, 6.0F));
     public static final Block TEMP_IO = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
     public static final Block TEMP_POWER_IO = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
@@ -30,12 +30,12 @@ public class GSBlocks {
     public static final Block BOYKISSER = new Block(FabricBlockSettings.of().mapColor(MapColor.WHITE));
 
     public static void init() {
-        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "scrap_spiremetal"), SCRAP_SPIREMETAL);
-        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "spiremetal_block"), SPIREMETAL_BLOCK);
+        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "scrap_spiresteel"), SCRAP_SPIRESTEEL);
+        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "spiresteel_block"), SPIRESTEEL_BLOCK);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "tonitrium_block"), TONITRIUM_BLOCK);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "stormglass"), STORMGLASS);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "magnet_coil"), MAGNET_COIL);
-        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "spiremetal_plating"), SPIREMETAL_PLATING);
+        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "spiresteel_plating"), SPIRESTEEL_PLATING);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "tonitrium_plating"), TONITRIUM_PLATING);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "temp_io"), TEMP_IO);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "temp_power_io"), TEMP_POWER_IO);

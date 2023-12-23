@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "golden_spark:item/spiremetal_ingot"
+    "layer0": "golden_spark:item/spiresteel_ingot"
   }
 }

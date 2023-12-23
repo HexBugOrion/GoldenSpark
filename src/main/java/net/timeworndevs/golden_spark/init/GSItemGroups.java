@@ -18,10 +18,10 @@ public class GSItemGroups {
 
     public static void init() {
         Registry.register(Registries.ITEM_GROUP, GS_MAIN, FabricItemGroup.builder().displayName(Text.translatable("gs.main")).icon(() -> new ItemStack(GSItems.GS_ICON)).entries(((context, entries) -> {
-            entries.add(GSItems.SPIREMETAL_INGOT);
-            entries.add(GSItems.SPIREMETAL_BLOCK);
-            entries.add(GSItems.SCRAP_SPIREMETAL);
-            entries.add(GSItems.SPIREMETAL_PLATING);
+            entries.add(GSItems.SPIRESTEEL_INGOT);
+            entries.add(GSItems.SPIRESTEEL_BLOCK);
+            entries.add(GSItems.SCRAP_SPIRESTEEL);
+            entries.add(GSItems.SPIRESTEEL_PLATING);
             entries.add(GSItems.TONITRIUM_INGOT);
             entries.add(GSItems.TONITRIUM_BLOCK);
             entries.add(GSItems.TONITRIUM_PLATING);
