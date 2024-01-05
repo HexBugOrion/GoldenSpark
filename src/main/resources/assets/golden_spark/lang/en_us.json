@@ -10,5 +10,7 @@
   "block.golden_spark.tonitrium_plating": "Tonitrium Plating",
   "block.golden_spark.endless_source": "The Endless Source",
   "block.golden_spark.boykisser": "Boykisser Block",
-  "gs.main": "Golden Spark Main Items"
+  "gs.main": "Golden Spark Main Items",
+
+  "item.golden_spark.patent_manual": "Patent Manual"
 }
