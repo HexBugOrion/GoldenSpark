@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "golden_spark:block/scrap_spiresteel"
+    "all": "golden_spark:block/partial_scrap_spiresteel"
   }
 }

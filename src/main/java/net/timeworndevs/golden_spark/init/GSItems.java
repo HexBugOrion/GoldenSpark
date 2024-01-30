@@ -16,7 +16,7 @@ public class GSItems {
     public static final Item SPIRESTEEL_SCRAPS = new Item(new Item.Settings());
 
     public static final BlockItem SPIRESTEEL_BLOCK = new BlockItem(GSBlocks.SPIRESTEEL_BLOCK, new Item.Settings());
-    public static final BlockItem SCRAP_SPIRESTEEL = new BlockItem(GSBlocks.SCRAP_SPIRESTEEL, new Item.Settings());
+    public static final BlockItem PARTIAL_SCRAP_SPIRESTEEL = new BlockItem(GSBlocks.PARTIAL_SCRAP_SPIRESTEEL, new Item.Settings());
     public static final BlockItem TONITRIUM_BLOCK = new BlockItem(GSBlocks.TONITRIUM_BLOCK, new Item.Settings());
     public static final BlockItem STORMGLASS = new BlockItem(GSBlocks.STORMGLASS, new Item.Settings());
 
@@ -35,7 +35,7 @@ public class GSItems {
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "spiresteel_scraps"), SPIRESTEEL_SCRAPS);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "spiresteel_ingot"), SPIRESTEEL_INGOT);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "tonitrium_ingot"), TONITRIUM_INGOT);
-        Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "scrap_spiresteel"), SCRAP_SPIRESTEEL);
+        Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "partial_scrap_spiresteel"), PARTIAL_SCRAP_SPIRESTEEL);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "spiresteel_block"), SPIRESTEEL_BLOCK);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "tonitrium_block"), TONITRIUM_BLOCK);
         Registry.register(Registries.ITEM, new Identifier(GSMain.MODID, "stormglass"), STORMGLASS);

@@ -14,7 +14,7 @@ import net.timeworndevs.golden_spark.block.EndlessSourceBlock;
 public class GSBlocks {
 
     //Resource blocks
-    public static final Block SCRAP_SPIRESTEEL = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
+    public static final Block PARTIAL_SCRAP_SPIRESTEEL = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
     public static final Block SPIRESTEEL_BLOCK = new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F));
     public static final Block TONITRIUM_BLOCK = new Block(FabricBlockSettings.of().mapColor(MapColor.DARK_AQUA).sounds(BlockSoundGroup.NETHERITE).requiresTool().strength(5.0F, 6.0F));
     public static final GlassBlock STORMGLASS = new GlassBlock(FabricBlockSettings.of().mapColor(MapColor.CYAN).sounds(BlockSoundGroup.GLASS).requiresTool().strength(0.3f).nonOpaque());
@@ -30,7 +30,7 @@ public class GSBlocks {
     public static final Block BOYKISSER = new Block(FabricBlockSettings.of().mapColor(MapColor.WHITE));
 
     public static void init() {
-        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "scrap_spiresteel"), SCRAP_SPIRESTEEL);
+        Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "partial_scrap_spiresteel"), PARTIAL_SCRAP_SPIRESTEEL);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "spiresteel_block"), SPIRESTEEL_BLOCK);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "tonitrium_block"), TONITRIUM_BLOCK);
         Registry.register(Registries.BLOCK, new Identifier(GSMain.MODID, "stormglass"), STORMGLASS);
