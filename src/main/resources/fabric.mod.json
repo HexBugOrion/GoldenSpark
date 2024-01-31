@@ -20,7 +20,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.timeworndevs.golden_spark.GSMain"
+      "net.timeworndevs.golden_spark.Main"
     ]
   },
   "mixins": [

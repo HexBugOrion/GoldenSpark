@@ -22,7 +22,14 @@ repositories {
 
 	maven { url = "https://maven.blamejared.com" }
 
-
+	maven {
+		name = 'GeckoLib'
+		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+		content {
+			includeGroupByRegex("software\\.bernie.*")
+			includeGroup("com.eliotlash.mclib")
+		}
+	}
 }
 
 dependencies {
@@ -45,6 +52,10 @@ dependencies {
 	//patchouli and revelationary
 	modImplementation include("vazkii.patchouli:Patchouli:${project.patchouli_version}")
 	modImplementation include("maven.modrinth:Revelationary:${project.revelationary_version}")
+
+	//GeckoLib
+	modImplementation include("software.bernie.geckolib:${project.geckolib_version}")
+
 }
 
 processResources {

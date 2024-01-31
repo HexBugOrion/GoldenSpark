@@ -1,6 +1,6 @@
 package net.timeworndevs.golden_spark.mixin;
 
-import net.timeworndevs.golden_spark.GSMain;
+import net.timeworndevs.golden_spark.Main;
 import net.minecraft.client.gui.screen.TitleScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,6 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ExampleMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		GSMain.LOGGER.info("This line is printed by an example mod mixin!");
+		Main.LOGGER.info("This line is printed by an example mod mixin!");
 	}
 }
