@@ -1,7 +1,6 @@
 package net.timeworndevs.golden_spark;
 
 import net.fabricmc.api.ModInitializer;
-import net.timeworndevs.golden_spark.common.CommonBlockEntityTypes;
 import net.timeworndevs.golden_spark.common.CommonBlocks;
 import net.timeworndevs.golden_spark.common.CommonItemGroups;
 import net.timeworndevs.golden_spark.common.CommonItems;
@@ -19,6 +18,5 @@ public class Main implements ModInitializer {
 		CommonItems.init();
 		CommonBlocks.init();
 		CommonItemGroups.init();
-		CommonBlockEntityTypes.init();
 	}
 }
