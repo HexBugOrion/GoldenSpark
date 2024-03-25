@@ -2,9 +2,12 @@ package net.timeworndevs.golden_spark.common;
 
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.layers.RenderLayer;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GlassBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.MapColor;
 import net.timeworndevs.golden_spark.init.GSRegistry;
 
 public class CommonBlocks {
@@ -46,19 +49,19 @@ public class CommonBlocks {
         //Registry.register(Registries.BLOCK, new Identifier(Main.MODID, "endless_source"), ENDLESS_SOURCE);
         //Registry.register(Registries.BLOCK, new Identifier(Main.MODID, "boykisser"), BOYKISSER);
 
-        PARTIAL_SCRAP_SPIRESTEEL = GSRegistry.register("partial_scrap_spiresteel", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F)));
-        SPIRESTEEL_BLOCK = GSRegistry.register("spiresteel_block", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F)));
-        TONITRIUM_BLOCK = GSRegistry.register("tonitrium_block", new Block(FabricBlockSettings.of().mapColor(MapColor.DARK_AQUA).sounds(BlockSoundGroup.NETHERITE).requiresTool().strength(5.0F, 6.0F)));
-        STORMGLASS = GSRegistry.register("stormglass", new GlassBlock(FabricBlockSettings.of().mapColor(MapColor.CYAN).sounds(BlockSoundGroup.GLASS).requiresTool().strength(0.3f).nonOpaque()));
+        PARTIAL_SCRAP_SPIRESTEEL = GSRegistry.register("partial_scrap_spiresteel", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.COPPER).requiresTool().strength(5.0F, 6.0F)));
+        SPIRESTEEL_BLOCK = GSRegistry.register("spiresteel_block", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.COPPER).requiresTool().strength(5.0F, 6.0F)));
+        TONITRIUM_BLOCK = GSRegistry.register("tonitrium_block", new Block(FabricBlockSettings.of().mapColor(MapColor.TERRACOTTA_CYAN).sounds(SoundType.NETHERITE_BLOCK).requiresTool().strength(5.0F, 6.0F)));
+        STORMGLASS = GSRegistry.register("stormglass", new GlassBlock(FabricBlockSettings.of().mapColor(MapColor.COLOR_CYAN).sounds(SoundType.GLASS).requiresTool().strength(0.3f).nonOpaque()));
 
-        MAGNET_COIL = GSRegistry.register("magnet_coil", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.NETHERITE).requiresTool().strength(5.0F, 6.0F)));
-        SPIRESTEEL_PLATING = GSRegistry.register("spiresteel_plating", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(BlockSoundGroup.COPPER).requiresTool().strength(5.0F, 6.0F)));
+        MAGNET_COIL = GSRegistry.register("magnet_coil", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.NETHERITE_BLOCK).requiresTool().strength(5.0F, 6.0F)));
+        SPIRESTEEL_PLATING = GSRegistry.register("spiresteel_plating", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.COPPER).requiresTool().strength(5.0F, 6.0F)));
 
         clientBlockRendering();
     }
 
     public static void clientBlockRendering() {
-        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), STORMGLASS);
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.translucent(), STORMGLASS);
     }
 
 }
