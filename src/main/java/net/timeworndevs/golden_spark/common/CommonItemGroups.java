@@ -2,6 +2,7 @@ package net.timeworndevs.golden_spark.common;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -12,20 +13,19 @@ import net.timeworndevs.golden_spark.Main;
 
 public class CommonItemGroups {
 
-    //private static final ResourceKey<CreativeModeTab> GS_MAIN = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(Main.MODID, "gs_main"));
+    private static final ResourceKey<CreativeModeTab> GS_MAIN = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(Main.MODID, "gs_main"));
 
     public static void init() {
-        //Registry.register(Registries.CREATIVE_MODE_TAB, GS_MAIN, FabricItemGroup.builder().displayName(Component.translatable("gs.main")).icon(() -> new ItemStack(CommonItems.GS_ICON)).entries(((context, entries) -> {
-            //entries.add(CommonItems.SPIRESTEEL_INGOT);
-            //entries.add(CommonItems.SPIRESTEEL_BLOCK);
-            //entries.add(CommonItems.PARTIAL_SCRAP_SPIRESTEEL);
-            //entries.add(CommonItems.SPIRESTEEL_PLATING);
-            //entries.add(CommonItems.TONITRIUM_INGOT);
-            //entries.add(CommonItems.TONITRIUM_BLOCK);
-            //entries.add(CommonItems.TONITRIUM_PLATING);
-            //entries.add(CommonItems.STORMGLASS);
-            //entries.add(CommonItems.MAGNET_COIL);
-            //entries.add(GSItems.ENDLESS_SOURCE);
-        //})).build());
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, GS_MAIN, FabricItemGroup.builder().title(Component.translatable("gs.main")).icon(() -> new ItemStack(CommonItems.GS_ICON)).displayItems(((context, entries) -> {
+            entries.accept(CommonItems.PARTIAL_SCRAP_SPIRESTEEL);
+            entries.accept(CommonItems.SPIRESTEEL_SCRAPS);
+            entries.accept(CommonItems.SPIRESTEEL_INGOT);
+            entries.accept(CommonItems.SPIRESTEEL_BLOCK);
+            entries.accept(CommonItems.SPIRESTEEL_PLATING);
+            entries.accept(CommonItems.TONITRIUM_INGOT);
+            entries.accept(CommonItems.TONITRIUM_BLOCK);
+            entries.accept(CommonItems.TONITRIUM_PLATING);
+            entries.accept(CommonItems.MAGNET_COIL);
+        })).build());
     }
 }

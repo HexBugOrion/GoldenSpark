@@ -3,44 +3,48 @@ package net.timeworndevs.golden_spark.common;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.timeworndevs.golden_spark.Main;
+import net.timeworndevs.golden_spark.init.GSRegistry;
 
 public class CommonItems {
 
-    //public static final Item GS_ICON = new Item(new Item.Properties());
-    //public static final Item SPIRESTEEL_INGOT = new Item(new Item.Properties());
-    //public static final Item TONITRIUM_INGOT = new Item(new Item.Properties());
-    //public static final Item SPIRESTEEL_SCRAPS = new Item(new Item.Properties());
-//
-    //public static final BlockItem SPIRESTEEL_BLOCK = new BlockItem(CommonBlocks.SPIRESTEEL_BLOCK, new Item.Properties());
-    //public static final BlockItem PARTIAL_SCRAP_SPIRESTEEL = new BlockItem(CommonBlocks.PARTIAL_SCRAP_SPIRESTEEL, new Item.Properties());
-    //public static final BlockItem TONITRIUM_BLOCK = new BlockItem(CommonBlocks.TONITRIUM_BLOCK, new Item.Properties());
-    //public static final BlockItem STORMGLASS = new BlockItem(CommonBlocks.STORMGLASS, new Item.Properties());
-//
-    //public static final BlockItem MAGNET_COIL = new BlockItem(CommonBlocks.MAGNET_COIL, new Item.Properties());
-    //public static final BlockItem SPIRESTEEL_PLATING = new BlockItem(CommonBlocks.SPIRESTEEL_PLATING, new Item.Properties());
-    //public static final BlockItem TONITRIUM_PLATING = new BlockItem(CommonBlocks.TONITRIUM_PLATING, new Item.Properties());
-    //public static final BlockItem TEMP_IO = new BlockItem(CommonBlocks.TEMP_IO, new Item.Properties());
-    //public static final BlockItem TEMP_POWER_IO = new BlockItem(CommonBlocks.TEMP_POWER_IO, new Item.Properties());
-//
-//
+    public static Item GS_ICON;
+    public static Item SPIRESTEEL_INGOT;
+    public static Item TONITRIUM_INGOT;
+    public static Item SPIRESTEEL_SCRAPS;
+
+    public static BlockItem SPIRESTEEL_BLOCK;
+    public static BlockItem PARTIAL_SCRAP_SPIRESTEEL;
+    public static BlockItem TONITRIUM_BLOCK;
+    public static BlockItem STOMRGLASS;
+
+    public static BlockItem MAGNET_COIL;
+    public static BlockItem SPIRESTEEL_PLATING;
+    public static BlockItem TONITRIUM_PLATING;
+    public static BlockItem TEMP_IO;
+    public static BlockItem TEMP_POWER_IO;
+
     //public static final BlockItem ENDLESS_SOURCE = new BlockItem(CommonBlocks.ENDLESS_SOURCE, new Item.Properties());
     //public static final BlockItem BOYKISSER = new BlockItem(CommonBlocks.BOYKISSER, new Item.Properties());
-//
+
     public static void init() {
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "butter_spark"), GS_ICON);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "spiresteel_scraps"), SPIRESTEEL_SCRAPS);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "spiresteel_ingot"), SPIRESTEEL_INGOT);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "tonitrium_ingot"), TONITRIUM_INGOT);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "partial_scrap_spiresteel"), PARTIAL_SCRAP_SPIRESTEEL);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "spiresteel_block"), SPIRESTEEL_BLOCK);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "tonitrium_block"), TONITRIUM_BLOCK);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "stormglass"), STORMGLASS);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "magnet_coil"), MAGNET_COIL);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "spiresteel_plating"), SPIRESTEEL_PLATING);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "tonitrium_plating"), TONITRIUM_PLATING);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "temp_io"), TEMP_IO);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "temp_power_io"), TEMP_POWER_IO);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "endless_source"), ENDLESS_SOURCE);
-    //    Registry.register(Registries.ITEM, new Identifier(Main.MODID, "boykisser"), BOYKISSER);
+        GS_ICON = GSRegistry.register("butter_spark", new Item(new Item.Properties()));
+        SPIRESTEEL_INGOT = GSRegistry.register("spiresteel_ingot", new Item(new Item.Properties()));
+        TONITRIUM_INGOT = GSRegistry.register("tonitrium_ingot", new Item(new Item.Properties()));
+        SPIRESTEEL_SCRAPS = GSRegistry.register("spiresteel_scraps", new Item(new Item.Properties()));
+
+        SPIRESTEEL_BLOCK = GSRegistry.register("spiresteel_block", new BlockItem(CommonBlocks.SPIRESTEEL_BLOCK, new Item.Properties()));
+        PARTIAL_SCRAP_SPIRESTEEL = GSRegistry.register("partial_scrap_spiresteel", new BlockItem(CommonBlocks.PARTIAL_SCRAP_SPIRESTEEL, new Item.Properties()));
+        TONITRIUM_BLOCK = GSRegistry.register("tonitrium_block", new BlockItem(CommonBlocks.TONITRIUM_BLOCK, new Item.Properties()));
+        STOMRGLASS = GSRegistry.register("stormglass", new BlockItem(CommonBlocks.STORMGLASS, new Item.Properties()));
+
+        MAGNET_COIL = GSRegistry.register("magnet_coil", new BlockItem(CommonBlocks.MAGNET_COIL, new Item.Properties()));
+        SPIRESTEEL_PLATING = GSRegistry.register("spiresteel_plating", new BlockItem(CommonBlocks.SPIRESTEEL_PLATING, new Item.Properties()));
+        TONITRIUM_PLATING = GSRegistry.register("tonitrium_plating", new BlockItem(CommonBlocks.TONITRIUM_PLATING, new Item.Properties()));
+        TEMP_IO = GSRegistry.register("temp_io", new BlockItem(CommonBlocks.TEMP_IO, new Item.Properties()));
+        TEMP_POWER_IO = GSRegistry.register("temp_power_io", new BlockItem(CommonBlocks.TEMP_POWER_IO, new Item.Properties()));
+    }
+
+    public static void addItemGroups() {
+
     }
 }

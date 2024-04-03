@@ -35,6 +35,9 @@ public class CommonBlocks {
 
     public static Block MAGNET_COIL;
     public static Block SPIRESTEEL_PLATING;
+    public static Block TONITRIUM_PLATING;
+    public static Block TEMP_IO;
+    public static Block TEMP_POWER_IO;
 
     public static void init() {
         //Registry.register(Registries.BLOCK, new Identifier(Main.MODID, "partial_scrap_spiresteel"), PARTIAL_SCRAP_SPIRESTEEL);
@@ -56,6 +59,9 @@ public class CommonBlocks {
 
         MAGNET_COIL = GSRegistry.register("magnet_coil", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.NETHERITE_BLOCK).requiresTool().strength(5.0F, 6.0F)));
         SPIRESTEEL_PLATING = GSRegistry.register("spiresteel_plating", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.COPPER).requiresTool().strength(5.0F, 6.0F)));
+        TONITRIUM_PLATING = GSRegistry.register("tonitrium_plating", new Block(FabricBlockSettings.of().mapColor(MapColor.TERRACOTTA_CYAN).requiresTool().strength(5.0F,6.0F)));
+        TEMP_IO = GSRegistry.register("temp_io", new Block(FabricBlockSettings.of()));
+        TEMP_POWER_IO = GSRegistry.register("temp_power_io", new Block(FabricBlockSettings.of()));
 
         clientBlockRendering();
     }
