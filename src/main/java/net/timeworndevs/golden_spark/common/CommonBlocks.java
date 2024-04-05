@@ -3,9 +3,9 @@ package net.timeworndevs.golden_spark.common;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.GlassBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.material.MapColor;
 import net.timeworndevs.golden_spark.init.GSRegistry;
@@ -57,7 +57,7 @@ public class CommonBlocks {
         TONITRIUM_BLOCK = GSRegistry.register("tonitrium_block", new Block(FabricBlockSettings.of().mapColor(MapColor.TERRACOTTA_CYAN).sounds(SoundType.NETHERITE_BLOCK).requiresTool().strength(5.0F, 6.0F)));
         STORMGLASS = GSRegistry.register("stormglass", new GlassBlock(FabricBlockSettings.of().mapColor(MapColor.COLOR_CYAN).sounds(SoundType.GLASS).requiresTool().strength(0.3f).nonOpaque()));
 
-        MAGNET_COIL = GSRegistry.register("magnet_coil", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.NETHERITE_BLOCK).requiresTool().strength(5.0F, 6.0F)));
+        MAGNET_COIL = GSRegistry.register("magnet_coil", new RotatedPillarBlock(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.NETHERITE_BLOCK).requiresTool().strength(5.0F, 6.0F)));
         SPIRESTEEL_PLATING = GSRegistry.register("spiresteel_plating", new Block(FabricBlockSettings.of().mapColor(MapColor.GOLD).sounds(SoundType.COPPER).requiresTool().strength(5.0F, 6.0F)));
         TONITRIUM_PLATING = GSRegistry.register("tonitrium_plating", new Block(FabricBlockSettings.of().mapColor(MapColor.TERRACOTTA_CYAN).requiresTool().strength(5.0F,6.0F)));
         TEMP_IO = GSRegistry.register("temp_io", new Block(FabricBlockSettings.of()));

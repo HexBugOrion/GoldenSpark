@@ -15,8 +15,8 @@ public class Main implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("THE VOLTAGE!! IT SURGES!!!");
-		CommonItems.init();
 		CommonBlocks.init();
+		CommonItems.init();
 		CommonItemGroups.init();
 	}
 }
